@@ -1,0 +1,55 @@
+/*
+//Autora: Heloiza Mariana Alves dos Santos
+Nome do Programa: Semaforo 2
+Data: 20/02/2025
+Descricao: meu segundo programa em C
+*/
+
+
+#define pinLedRedA 13
+#define pinLedGreenA 11
+#define pinLedYellowA 9
+
+#define pinLedRedB 6
+#define pinLedGreenB 2
+#define pinLedYellowB 4
+
+#define tempoLedRedA 5000
+#define tempoLedGreenA 3000
+#define tempoLedYellowA 2000
+
+#define tempoLedRedB 5000
+#define tempoLedGreenB 3000
+#define tempoLedYellowB 2000
+void setup()
+{
+ pinMode (pinLedRedA,OUTPUT);
+ pinMode (pinLedYellowA,OUTPUT);
+ pinMode (pinLedGreenA,OUTPUT);
+ pinMode (pinLedGreenB,OUTPUT);
+ pinMode (pinLedYellowB,OUTPUT);
+ pinMode (pinLedRedB,OUTPUT);
+  
+}
+void loop()
+{
+digitalWrite(pinLedRedA, HIGH);
+digitalWrite(pinLedGreenB, HIGH);
+  
+delay(tempoLedGreenB);
+delay(tempoLedRedA);
+digitalWrite(pinLedGreenB, LOW);
+digitalWrite(pinLedYellowB, HIGH);
+delay(tempoLedYellowB);
+digitalWrite(pinLedYellowB, LOW);
+digitalWrite(pinLedRedA, LOW);
+digitalWrite(pinLedRedB, HIGH);
+digitalWrite(pinLedGreenA, HIGH);
+delay(tempoLedGreenA);
+delay(tempoLedRedB);
+digitalWrite(pinLedGreenA, LOW);
+digitalWrite(pinLedYellowA, HIGH);
+delay(tempoLedYellowA);
+digitalWrite(pinLedYellowA, LOW);
+digitalWrite(pinLedRedB, LOW);
+}

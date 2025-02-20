@@ -1,0 +1,46 @@
+/*
+//Autora: Heloiza Mariana Alves dos Santos
+Nome do Programa: Semaforo 1
+Data: 19/02/2025
+Descricao: meu primeiro programa em C
+*/
+
+#define pinLedRed 13
+#define tempoLigado Red 5
+#define pinLedGreen 11
+#define tempoligado Green 2
+#define pinLedYellow 12
+#define tempoLigado Yellow 3
+#define tempoLedRed 5000
+#define tempoLedGreen 3000
+#define tempoLedYellow 2000
+void setup()
+{ 
+  pinMode (pinLedRed,OUTPUT);
+  pinMode (pinLedYellow,OUTPUT);
+  pinMode (pinLedGreen,OUTPUT);
+}
+void loop()
+{
+  digitalWrite(pinLedRed, HIGH);
+  delay (tempoLedRed);
+  digitalWrite(pinLedRed, LOW);
+  delay (tempoLedRed);
+  
+  digitalWrite(pinLedGreen, HIGH);
+   delay (tempoLedGreen);
+  digitalWrite(pinLedGreen, LOW);
+  delay (tempoLedGreen); 
+         
+  digitalWrite(pinLedYellow, HIGH);
+  delay (tempoLedYellow);
+  digitalWrite(pinLedYellow, LOW);
+  delay (tempoLedYellow);
+}
+
+
+
+
+
+
+
