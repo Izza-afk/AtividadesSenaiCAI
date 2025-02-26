@@ -1,0 +1,32 @@
+/*
+Nome do arquivo: Atividade 28
+Autora: Heloiza Mariana Alves dos Santos
+Data: 26/02/2025
+Descricao: Este codigo nos mostra como caucular o IMC
+
+*/
+float peso = 58;
+float altura = 1.60;
+float resultado = 0;
+
+
+void setup()
+{
+ Serial.begin(9600);
+resultado = pow(altura,2); 
+resultado = peso / resultado;
+  Serial.print("Seu IMC eh: ");
+  Serial.println(resultado);
+  if (resultado >= 0 && resultado <=19.1) {
+  Serial.println("Abaixo do peso ");
+  }else if (resultado >= 19.2 && resultado <=25.8){
+  Serial.println ("esta otimo");
+  }else if (resultado >=25.9 && resultado <=27.3){
+    Serial.println ("Um pouco acime do peso");
+}
+}
+
+void loop()
+{
+  
+}
