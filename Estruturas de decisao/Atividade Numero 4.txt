@@ -1,0 +1,22 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 27/02/2025
+Descricao: Atividade numero 
+*/
+int numero = 7;
+
+void setup()
+{
+ Serial.begin(9600);
+   if (numero <= 0){
+   Serial.println ("Negativo");
+   }else if (numero >= 1);{
+   Serial.println ("Positivo");
+}
+}
+
+void loop()
+{
+  
+}

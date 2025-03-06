@@ -1,0 +1,28 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 27/02/2025
+Descricao: Atividade numero par
+*/
+#define pinLedBlue 13
+void setup()
+{
+ Serial.begin(9600);
+   
+  pinMode (pinLedBlue, OUTPUT); 
+  
+  int Numero1 = 2;
+   int Numero2 = 4;
+  int resultado = 0;
+  
+  resultado = Numero1 / Numero2;
+  if (resultado == 0) {
+    digitalWrite(pinLedBlue, HIGH);
+  }
+   
+}
+
+void loop()
+{
+  
+}

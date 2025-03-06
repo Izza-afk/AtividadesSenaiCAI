@@ -1,0 +1,31 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 28/02/2025
+Descricao: Ativide nota 8
+*/
+int nota1 = 8;
+int nota2 = 5;
+int nota3 = 7;
+int nota4 = 10;
+int resultado = 0;
+
+  void setup()
+{
+ Serial.begin(9600);
+   resultado = nota1 + nota2 + nota3 + nota4;
+    resultado = resultado / 4;
+    if (resultado >= 7){
+      Serial.println("Aprovado");
+    }else if (resultado <=7 && resultado >=5){
+      Serial.println("Recuperacao");
+    }else if (resultado <5){
+      Serial.println("Reprovado");
+    }
+    
+}
+
+void loop()
+{
+  
+}

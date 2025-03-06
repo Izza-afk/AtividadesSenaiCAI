@@ -1,0 +1,26 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 27/02/2025
+Descricao: Atividade Temperatura
+*/
+#define pinLedRed 13
+
+void setup()
+{
+ Serial.begin(9600);
+  
+ pinMode(pinLedRed, OUTPUT);   
+  
+  int temperatura = 30;
+  if (temperatura >= 30){
+    digitalWrite(pinLedRed, HIGH);
+  }
+  
+   
+}
+
+void loop()
+{
+  
+}

@@ -1,0 +1,24 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 28/02/2025
+Descricao: Ativide aumento de salario 6
+*/
+int resultado = 0;
+int salario = 475;
+void setup()
+{
+  Serial.begin(9600);
+  if (salario < 500){
+    resultado = salario + 30 / 100 + salario;
+    Serial.println("Joana");
+    Serial.println("salario anterior: 475");
+    Serial.println("novo salario: ");
+    Serial.println(resultado);
+  }
+}
+
+void loop()
+{
+  
+}

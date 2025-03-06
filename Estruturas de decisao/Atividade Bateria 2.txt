@@ -1,0 +1,24 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de Decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 27/02/2025
+Descricao: Atividade Bateria 
+*/
+#define pinLedRed 13
+void setup()
+{
+ Serial.begin(9700);
+ 
+  pinMode(pinLedRed, OUTPUT);  
+  
+  int bateria = 10;
+  if (bateria <= 20){
+    digitalWrite(pinLedRed, HIGH);
+  }
+   
+}
+
+void loop()
+{
+ 
+}

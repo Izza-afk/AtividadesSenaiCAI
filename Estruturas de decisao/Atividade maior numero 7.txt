@@ -1,0 +1,23 @@
+/*
+Nome do arquivo: Aula 29 - Estruturas de decisao
+Autora: Heloiza Mariana Alves dos Santos
+Data: 27/02/2025
+Descricao: Atividade maior numero 7
+*/
+int Numero1 = 8;
+int Numero2 = 10;
+  
+void setup()
+{
+ Serial.begin(9600);
+  if (Numero1 > Numero2){
+    Serial.println ("8");
+  }else if ( Numero2 > Numero1){
+    Serial.println ("10");
+  }  
+}
+
+void loop()
+{
+  
+}
