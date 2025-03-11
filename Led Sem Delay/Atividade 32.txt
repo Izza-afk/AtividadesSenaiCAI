@@ -1,0 +1,59 @@
+
+/*
+Nome do arquivo: Atividade - 32 Led Sem Delay
+Autora: Heloiza Mariana Alves dos Santos
+Data: 10/03/2025
+Descricao: Fazer o Led piscar sem delay
+*/
+
+
+#define pinLedRed 13
+#define pinLedYellow 12
+#define pinLedGreen 11
+
+#define tempoRed 5000
+#define tempoYellow 2000
+#define tempoGreen 3000
+
+unsigned long tempoInicial = 0;
+int estadoSemaforo = 0;
+
+void setup()
+{
+ pinMode (pinLedRed, OUTPUT);
+ pinMode (pinLedGreen, OUTPUT);
+ pinMode (pinLedYellow, OUTPUT);
+
+}
+
+void loop()
+{
+ unsigned long tempoAtual = millis();
+  
+  if(tempoAtual - tempoInicial >=1000)
+  {
+    estadoSemaforo++;
+      tempoInicial = tempoAtual;
+    if(estadoSemaforo == 10) 
+      estadoSemaforo = 0;
+}
+    switch (estadoSemaforo)
+    {
+      case 0:
+      digitalWrite (pinLedRed, HIGH);
+      digitalWrite (pinLedYellow, LOW);
+      digitalWrite (pinLedGreen, LOW);
+      break;
+      
+      case 5:
+      digitalWrite (pinLedRed, LOW);
+      digitalWrite (pinLedYellow, LOW);
+      digitalWrite (pinLedGreen, HIGH);
+      break;
+      
+      case 8:
+      digitalWrite (pinLedRed, LOW);
+      digitalWrite (pinLedYellow, HIGH);
+      digitalWrite (pinLedGreen, LOW);
+      break;
+    }}

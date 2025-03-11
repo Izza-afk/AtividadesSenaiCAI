@@ -1,0 +1,67 @@
+
+/*
+Nome do arquivo: Atividade 30 - Switch case
+Autora: Heloiza Mariana Alves dos Santos
+Data: 07/03/2025
+Descricao: Switch Case
+*/
+
+#define pinLedWhite 13
+#define pinLedBlue 12
+#define pinLedGreen 11
+#define pinLedRed 10
+#define pinLedYellow 9
+
+
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinLedWhite, OUTPUT);
+  pinMode(pinLedBlue, OUTPUT);
+  pinMode(pinLedGreen, OUTPUT);
+  pinMode(pinLedRed, OUTPUT);
+  pinMode(pinLedYellow, OUTPUT);
+  int ar = 3;
+  switch (ar)
+  {
+    case 4:
+    digitalWrite(pinLedWhite, HIGH);
+    Serial.println("Excelente");
+    break;
+    
+    case 3:
+    digitalWrite(pinLedBlue, HIGH);
+    Serial.println("Boa");
+    break;
+    
+    case 2:
+    digitalWrite(pinLedGreen, HIGH);
+    Serial.println("Normal");
+    break;
+    
+    case 1:
+    digitalWrite(pinLedRed, HIGH);
+    Serial.println("Ruim");
+    break;
+    
+    case 0:
+    digitalWrite(pinLedYellow, HIGH);
+    Serial.println("Pessimo");
+    break;
+    
+  default:
+    digitalWrite(pinLedWhite,LOW);
+     digitalWrite(pinLedBlue,LOW);
+     digitalWrite(pinLedGreen,LOW);
+     digitalWrite(pinLedRed,LOW);
+     digitalWrite(pinLedYellow,LOW);
+    Serial.println("ERRO");
+    break;
+  }
+}
+
+void loop()
+{
+  
+}
