@@ -1,0 +1,29 @@
+/***********
+Nome do arquivo: Atividade 34 - contagem de Botao 
+Autora: Heloiza Mariana Alves dos Santos
+Data: 11/03/2025
+Descricao: contar quantas vezes o botao foi apertado
+*/
+
+#define pinBotao 12
+int contagem = 0;
+bool estadoAnteriorBotao = 0;
+
+void setup()
+{
+  pinMode (pinBotao, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+bool estadoAtualBotao = digitalRead(pinBotao);
+ 
+  if(estadoAtualBotao == 1 && estadoAnteriorBotao == 0)
+     {
+       contagem ++;
+       Serial.println(contagem);
+     }
+  
+  estadoAnteriorBotao = estadoAtualBotao;
+}

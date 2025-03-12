@@ -1,0 +1,27 @@
+
+#define pinBotao 13
+#define pinLedRed 3
+
+int contagem = 0;
+bool estadoAnteriorBotao = 0;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinBotao, INPUT);
+  pinMode(pinLedRed, OUTPUT);
+}
+
+void loop()
+{
+  unsigned long tempoAtual = millis();
+  bool estadoAtualBotao = digitalRead(pinBotao);
+  static bool estadoLed = 0;
+ 
+  if(estadoAtualBotao == 1 && estadoAnteriorBotao == 0)
+  {
+      estadoLed =!estadoLed;
+      digitalWrite(pinLedRed, estadoLed);
+   }
+ estadoAnteriorBotao = estadoAtualBotao;
+}
+
