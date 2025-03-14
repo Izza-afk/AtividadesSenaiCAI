@@ -1,0 +1,46 @@
+/*
+Nome do arquivo: Atividade  37 - Ligado e Desligado
+Autora: Heloiza Mariana Alves dos Santos
+Data: 13/03/2025
+Descricao:aparecer no painel "ligado" ou "desligado" 
+com base se o led esta ligado ou desligado
+*/
+
+
+#include <LiquidCrystal_I2C.h>
+#define pinLed 13
+LiquidCrystal_I2C lcd(0x27,16,2);
+#define pinBotao 2
+
+void setup()
+{
+  lcd.init();
+  lcd.backlight();
+  pinMode(2,INPUT);
+  pinMode(pinLed, OUTPUT);
+  lcd.print("Led Desligado   ");
+ 
+}
+void loop()
+{
+  
+  unsigned long tempoInicial = millis();
+  bool estadoAnteriorBotao = 0;
+  bool estadoAtualBotao=digitalRead(pinBotao);
+  static bool estadoLed =0;
+  
+  if(estadoAtualBotao==1 && estadoAnteriorBotao==0)
+{
+ estadoLed= !estadoLed;
+ digitalWrite(pinLed,estadoLed);
+ lcd.setCursor(0,0);
+ lcd.print("Led Ligado      ");
+  if(estadoAtualBotao==1 && estadoAnteriorBotao==0 && estadoLed==0)
+ lcd.setCursor(0,0);
+ lcd.print("Led Desligado   ");
+{
+   
+ } }
+estadoAnteriorBotao=estadoAtualBotao;
+
+}
