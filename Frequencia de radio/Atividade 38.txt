@@ -1,0 +1,17 @@
+/*
+Nome do arquivo: Atividade  38 - sistema de frequencia de radio
+Autora: Heloiza Mariana Alves dos Santos
+Data: 13/03/2025
+Descricao: Frequencia de Radio
+*/
+
+void setup()
+{
+ Serial.begin(9600);
+}
+
+void loop()
+{
+ int valor = analogRead(A0);
+  Serial.println(valor/10.23);
+}

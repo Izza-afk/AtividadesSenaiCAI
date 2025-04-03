@@ -1,0 +1,55 @@
+/*
+Nome: Heloiza Mariana Alves dos Santos
+Nome do projeto: Aula 50 - part 2
+data de criacao: 02/04/2025
+Descricao: criamos funcoes void para fazer um led piscar
+*/
+
+#include <Arduino.h>
+
+const int pinBotao = 3;
+
+// PROTOTIPOS DAS FUNCOES
+void ligaLed(int); //liga o Led
+void desligaLed(int); //desliga o Led
+void piscaLed(int, unsigned long); //faz o Led piscar
+int somaDeDoisNumeros(int, int); //soma dois numeros
+
+void setup()
+{
+  pinMode(2, OUTPUT);//define o Led como saida
+  Serial.begin(9600);//liga o monitor serial
+}
+
+void loop()
+{
+  piscaLed(2, 200);//define a velocidade na qual o Led vai piscar
+  int resultadoDaSoma = somaDeDoisNumeros(4, 8);//indica os dois numeros que serao somados
+  Serial.println(resultadoDaSoma);//mostra o resultado da soma dos dois numeros indicados no monitor serial
+}
+
+void ligaLed(int pin)//funcao void
+{
+
+  digitalWrite(pin, HIGH);//liga o Led
+}
+
+void desligaLed(int pin)//funcao void
+{
+
+  digitalWrite(pin, LOW);//desliga o Led
+}
+
+void piscaLed(int pin, unsigned long tempo)//funcao void
+{
+
+  ligaLed(pin);//liga o led
+  delay(tempo);//espera por um tempo
+  desligaLed(pin);//desliga o Led
+  delay(tempo);//espera por um tempo
+}
+int somaDeDoisNumeros(int numeroA, int numeroB)//variavel inteira que soma dois numeros
+{
+  int resultado = numeroA + numeroB;//armazena o resultado da conta
+  return resultado;//retorna o resultado
+}
