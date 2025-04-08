@@ -1,0 +1,125 @@
+//! Fiz ate a parte 6
+
+
+#include <Arduino.h>
+#include <Bounce2.h>
+#include <LiquidCrystal_I2C.h>
+
+#define pinLedRed 15
+#define pinLedYellow 2
+#define pinLedGreen 4
+#define pinLedGray 5
+
+#define pinBotao0 18
+#define pinBotao1 19
+#define pinBotao2 21
+
+Bounce botao0 = Bounce();
+Bounce botao1 = Bounce();
+Bounce botao2 = Bounce();
+
+int intensidadeLedRed = 0;
+int intensidadeLedYellow = 0;
+int intensidadeLedGreen = 0;
+int intensidadeLedGray = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  botao0.attach(pinBotao0, INPUT_PULLUP);
+  botao1.attach(pinBotao1, INPUT_PULLUP);
+  botao2.attach(pinBotao2, INPUT_PULLUP);
+  pinMode(pinLedGreen, OUTPUT);
+  pinMode(pinLedYellow, OUTPUT);
+  pinMode(pinLedRed, OUTPUT);
+}
+
+void loop()
+{
+  static int valorLeituraAnalogica = analogRead(A0);
+  botao0.update();
+  botao1.update();
+  botao2.update();
+
+  static bool modoSelecao = 0;
+  static int contagem;
+
+  if (botao0.fell())
+  {
+    if (modoSelecao == 1)
+    {
+      contagem++;
+      if (contagem > 3)
+      {
+        contagem = 0;
+      }
+    }
+    else
+    {
+      if (contagem == 0)
+      {
+
+        intensidadeLedRed = +10;
+      }
+      else if (contagem == 1)
+      {
+
+        intensidadeLedYellow = +10;
+      }
+      else if (contagem == 2)
+      {
+
+        intensidadeLedGreen = +10;
+      }
+      else if (contagem == 3)
+      {
+        intensidadeLedGray = +10;
+      }
+    }
+    Serial.println();
+    Serial.println(contagem);
+  }
+
+  if (botao1.fell())
+  {
+    if (modoSelecao == 0)
+    {
+      contagem--;
+    }
+    if (contagem < 0)
+    {
+      contagem = 3;
+    }
+    Serial.println(contagem);
+  }
+  else
+  {
+    if (contagem == 0)
+    {
+
+      analogRead(pinLedRed);
+      intensidadeLedRed = -10;
+    }
+    else if (contagem == 1)
+    {
+
+      analogRead(pinLedYellow);
+      intensidadeLedYellow = -10;
+    }
+    else if (contagem == 2)
+    {
+      analogRead(pinLedGreen);
+      intensidadeLedGreen = -10;
+    }
+    else if (contagem == 3)
+    {
+
+      analogRead(pinLedGray);
+      intensidadeLedGray = -10;
+    }
+  }
+  if (botao2.fell())
+  {
+    modoSelecao = !modoSelecao;
+  }
+}
